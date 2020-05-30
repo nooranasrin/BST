@@ -24,10 +24,30 @@ const printInOrderTraversal = function (tree) {
   printInOrderTraversal(tree.right);
 };
 
+const printPreOrderTraversal = function (tree) {
+  if (tree === null) {
+    return;
+  }
+  console.log(tree.value);
+  printPreOrderTraversal(tree.left);
+  printPreOrderTraversal(tree.right);
+};
+
+const printPostOrderTraversal = function (tree) {
+  if (tree === null) {
+    return;
+  }
+  printPostOrderTraversal(tree.left);
+  printPostOrderTraversal(tree.right);
+  console.log(tree.value);
+};
+
 const main = function () {
   const list = [10, 5, 15, 2, 6, 12, 16];
   const tree = list.reduce(insert, null);
-  printInOrderTraversal(tree);
+  // printInOrderTraversal(tree);
+  // printPreOrderTraversal(tree);
+  printPostOrderTraversal(tree);
 };
 
 main();
