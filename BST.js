@@ -15,10 +15,19 @@ const insert = function (tree, value) {
   return tree;
 };
 
+const printInOrderTraversal = function (tree) {
+  if (tree === null) {
+    return;
+  }
+  printInOrderTraversal(tree.left);
+  console.log(tree.value);
+  printInOrderTraversal(tree.right);
+};
+
 const main = function () {
   const list = [10, 5, 15, 2, 6, 12, 16];
   const tree = list.reduce(insert, null);
-  console.log(tree);
+  printInOrderTraversal(tree);
 };
 
 main();
