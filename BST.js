@@ -59,11 +59,11 @@ const search = function (tree, value) {
 const main = function () {
   const list = [10, 5, 15, 2, 6, 12, 16];
   const tree = list.reduce(insert, null);
-  // printInOrderTraversal(tree);
+  printInOrderTraversal(tree);
   // printPreOrderTraversal(tree);
   // printPostOrderTraversal(tree);
-  console.log(search(tree, 22));
-  console.log(search(tree, 10));
+  // console.log(search(tree, 22));
+  // console.log(search(tree, 10));
 };
 
 main();
