@@ -16,14 +16,27 @@ Node_ptr create_node(int value) {
 }
 
 Node_ptr insert(Node_ptr tree, int value) {
-  if (tree == NULL) {
+  if(tree == NULL) {
     return create_node(value);
   }
 
-  if (tree->value > value) {
-    tree->left = insert(tree->left, value);
-  } else {
-    tree->right = insert(tree->right, value);
+  Node_ptr current_tree = tree;
+  Node_ptr previous;
+  while (current_tree != NULL) {
+    previous = current_tree;
+    if (current_tree->value > value) {
+      current_tree = current_tree->left;
+    }
+    else {
+      current_tree = current_tree->right;
+    }
+  }
+
+  if (previous->value > value) {
+    previous->left = create_node(value);
+  }
+  else {
+    previous->right = create_node(value);
   }
   return tree;
 };
@@ -56,15 +69,16 @@ void printPostOrderTraversal(Node_ptr tree) {
 };
 
 Status search(Node_ptr tree, int value) {
-  if (tree == NULL) {
-    return Failure;
+  while(tree != NULL) {
+    if(tree->value == value) {
+      return Success;
+    }
+    if (tree->value > value) {
+      tree = tree->left;
+    }
+    else {
+      tree = tree->right;
+    }
   }
-  if (tree->value == value) {
-    return Success;
-  }
-  if (tree->value > value) {
-    return search(tree->left, value);
-  } else {
-    return search(tree->right, value);
-  }
+  return Failure;
 };

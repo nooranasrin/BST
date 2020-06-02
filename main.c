@@ -9,9 +9,9 @@ int main(void) {
   tree = insert(tree, 6);
   tree = insert(tree, 16);
   tree = insert(tree, 14);
-  // printInOrderTraversal(tree);
+  printInOrderTraversal(tree);
   // printPreOrderTraversal(tree);
   // printPostOrderTraversal(tree);
-  // printf("%d \n", search(tree, -2));
+  // printf("%d \n", search(tree, 17));
   return 0;
 }
