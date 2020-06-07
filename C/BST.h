@@ -22,5 +22,8 @@ void printInOrderTraversal(Node_ptr tree);
 void printPreOrderTraversal(Node_ptr tree);
 void printPostOrderTraversal(Node_ptr tree);
 Status search(Node_ptr tree, int value);
+Node_ptr delete_node(Node_ptr tree, int value);
+Node_ptr right_rotate(Node_ptr tree, int value);
+Node_ptr left_rotate(Node_ptr tree, int value);
 
 #endif
