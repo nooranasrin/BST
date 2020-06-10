@@ -15,7 +15,7 @@ const main = function () {
   // console.log(search(tree, 19));
   // console.log(leftRotate(tree, 10));
   // console.log(rightRotate(tree, 10));
-  console.log(balanceTree(tree));
+  console.log(JSON.stringify(balanceTree(tree), null, 2));
 };
 
 main();
